@@ -11,7 +11,7 @@ from typing import Optional
 
 class CommitError(Exception):
     """Base exception for all commit errors.
-    
+
     This is the root exception class that all other commit-specific
     exceptions inherit from, allowing for broad exception handling.
     """

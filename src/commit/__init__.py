@@ -15,10 +15,10 @@ from .core.exceptions import CommitError, GitError, ConfigError, APIError
 
 __all__ = [
     "__version__",
-    "__author__", 
+    "__author__",
     "__email__",
     "CommitError",
     "GitError",
-    "ConfigError", 
+    "ConfigError",
     "APIError",
 ]
