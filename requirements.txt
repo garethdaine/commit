@@ -1,8 +1,8 @@
 # Production dependencies for commit
 click>=8.0,<9.0
-openai>=1.0,<2.0
 gitpython>=3.1,<4.0
-rich>=13.0,<14.0
-pydantic>=2.0,<3.0
 httpx>=0.24,<1.0
+openai>=1.0,<2.0
+pydantic>=2.0,<3.0
+rich>=13.0,<14.0
 typing-extensions>=4.0,<5.0; python_version<"3.10"

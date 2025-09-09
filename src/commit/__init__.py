@@ -11,7 +11,7 @@ __author__ = "Gareth Daine"
 __email__ = "your.email@example.com"
 
 # Re-export key components for easier imports
-from .core.exceptions import CommitError, GitError, ConfigError, APIError
+from .core.exceptions import APIError, CommitError, ConfigError, GitError
 
 __all__ = [
     "__version__",

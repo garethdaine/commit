@@ -2,13 +2,11 @@
 
 from __future__ import annotations
 
-import pytest
-
 from commit.core.exceptions import (
-    CommitError,
-    GitError,
-    ConfigError,
     APIError,
+    CommitError,
+    ConfigError,
+    GitError,
     ValidationError,
 )
 
@@ -16,12 +14,12 @@ from commit.core.exceptions import (
 class TestCommitError:
     """Test cases for base CommitError class."""
 
-    def test_commit_error_should_inherit_from_exception(self):
+    def test_commit_error_should_inherit_from_exception(self) -> None:
         """Test that CommitError inherits from Exception."""
         error = CommitError("test message")
         assert isinstance(error, Exception)
 
-    def test_commit_error_should_store_message(self):
+    def test_commit_error_should_store_message(self) -> None:
         """Test that CommitError stores the error message."""
         message = "test error message"
         error = CommitError(message)
@@ -31,13 +29,13 @@ class TestCommitError:
 class TestGitError:
     """Test cases for GitError class."""
 
-    def test_git_error_should_inherit_from_commit_error(self):
+    def test_git_error_should_inherit_from_commit_error(self) -> None:
         """Test that GitError inherits from CommitError."""
         error = GitError("git error")
         assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
-    def test_git_error_should_store_message(self):
+    def test_git_error_should_store_message(self) -> None:
         """Test that GitError stores the error message."""
         message = "git operation failed"
         error = GitError(message)
@@ -47,13 +45,13 @@ class TestGitError:
 class TestConfigError:
     """Test cases for ConfigError class."""
 
-    def test_config_error_should_inherit_from_commit_error(self):
+    def test_config_error_should_inherit_from_commit_error(self) -> None:
         """Test that ConfigError inherits from CommitError."""
         error = ConfigError("config error")
         assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
-    def test_config_error_should_store_message(self):
+    def test_config_error_should_store_message(self) -> None:
         """Test that ConfigError stores the error message."""
         message = "configuration invalid"
         error = ConfigError(message)
@@ -63,13 +61,13 @@ class TestConfigError:
 class TestAPIError:
     """Test cases for APIError class."""
 
-    def test_api_error_should_inherit_from_commit_error(self):
+    def test_api_error_should_inherit_from_commit_error(self) -> None:
         """Test that APIError inherits from CommitError."""
         error = APIError("api error")
         assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
-    def test_api_error_should_store_message_and_status_code(self):
+    def test_api_error_should_store_message_and_status_code(self) -> None:
         """Test that APIError stores message and optional status code."""
         message = "API request failed"
         status_code = 429
@@ -78,7 +76,7 @@ class TestAPIError:
         assert str(error) == message
         assert error.status_code == status_code
 
-    def test_api_error_should_handle_none_status_code(self):
+    def test_api_error_should_handle_none_status_code(self) -> None:
         """Test that APIError handles None status code."""
         message = "API error without status"
         error = APIError(message)
@@ -90,13 +88,13 @@ class TestAPIError:
 class TestValidationError:
     """Test cases for ValidationError class."""
 
-    def test_validation_error_should_inherit_from_commit_error(self):
+    def test_validation_error_should_inherit_from_commit_error(self) -> None:
         """Test that ValidationError inherits from CommitError."""
         error = ValidationError("validation error")
         assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
-    def test_validation_error_should_store_message(self):
+    def test_validation_error_should_store_message(self) -> None:
         """Test that ValidationError stores the error message."""
         message = "input validation failed"
         error = ValidationError(message)
