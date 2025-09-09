@@ -133,7 +133,7 @@ dmypy.json
 cython_debug/
 
 # Application-specific
-.aicommits
+.commit
 *.log
 temp/
 tmp/

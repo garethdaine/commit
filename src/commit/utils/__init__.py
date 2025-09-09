@@ -1,4 +1,4 @@
-"""Utility functions for aicommits."""
+"""Utility functions for commit."""
 
 from __future__ import annotations
 

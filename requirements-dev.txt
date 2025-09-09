@@ -1,4 +1,4 @@
-# Development dependencies for aicommits
+# Development dependencies for commit
 -r requirements.txt
 
 # Testing

@@ -1,11 +1,11 @@
-"""Test cases for aicommits exception hierarchy."""
+"""Test cases for commit exception hierarchy."""
 
 from __future__ import annotations
 
 import pytest
 
-from aicommits.core.exceptions import (
-    AICommitsError,
+from commit.core.exceptions import (
+    CommitError,
     GitError,
     ConfigError,
     APIError,
@@ -13,28 +13,28 @@ from aicommits.core.exceptions import (
 )
 
 
-class TestAICommitsError:
-    """Test cases for base AICommitsError class."""
+class TestCommitError:
+    """Test cases for base CommitError class."""
 
-    def test_aicommits_error_should_inherit_from_exception(self):
-        """Test that AICommitsError inherits from Exception."""
-        error = AICommitsError("test message")
+    def test_commit_error_should_inherit_from_exception(self):
+        """Test that CommitError inherits from Exception."""
+        error = CommitError("test message")
         assert isinstance(error, Exception)
 
-    def test_aicommits_error_should_store_message(self):
-        """Test that AICommitsError stores the error message."""
+    def test_commit_error_should_store_message(self):
+        """Test that CommitError stores the error message."""
         message = "test error message"
-        error = AICommitsError(message)
+        error = CommitError(message)
         assert str(error) == message
 
 
 class TestGitError:
     """Test cases for GitError class."""
 
-    def test_git_error_should_inherit_from_aicommits_error(self):
-        """Test that GitError inherits from AICommitsError."""
+    def test_git_error_should_inherit_from_commit_error(self):
+        """Test that GitError inherits from CommitError."""
         error = GitError("git error")
-        assert isinstance(error, AICommitsError)
+        assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
     def test_git_error_should_store_message(self):
@@ -47,10 +47,10 @@ class TestGitError:
 class TestConfigError:
     """Test cases for ConfigError class."""
 
-    def test_config_error_should_inherit_from_aicommits_error(self):
-        """Test that ConfigError inherits from AICommitsError."""
+    def test_config_error_should_inherit_from_commit_error(self):
+        """Test that ConfigError inherits from CommitError."""
         error = ConfigError("config error")
-        assert isinstance(error, AICommitsError)
+        assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
     def test_config_error_should_store_message(self):
@@ -63,10 +63,10 @@ class TestConfigError:
 class TestAPIError:
     """Test cases for APIError class."""
 
-    def test_api_error_should_inherit_from_aicommits_error(self):
-        """Test that APIError inherits from AICommitsError."""
+    def test_api_error_should_inherit_from_commit_error(self):
+        """Test that APIError inherits from CommitError."""
         error = APIError("api error")
-        assert isinstance(error, AICommitsError)
+        assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
     def test_api_error_should_store_message_and_status_code(self):
@@ -74,7 +74,7 @@ class TestAPIError:
         message = "API request failed"
         status_code = 429
         error = APIError(message, status_code)
-        
+
         assert str(error) == message
         assert error.status_code == status_code
 
@@ -82,7 +82,7 @@ class TestAPIError:
         """Test that APIError handles None status code."""
         message = "API error without status"
         error = APIError(message)
-        
+
         assert str(error) == message
         assert error.status_code is None
 
@@ -90,10 +90,10 @@ class TestAPIError:
 class TestValidationError:
     """Test cases for ValidationError class."""
 
-    def test_validation_error_should_inherit_from_aicommits_error(self):
-        """Test that ValidationError inherits from AICommitsError."""
+    def test_validation_error_should_inherit_from_commit_error(self):
+        """Test that ValidationError inherits from CommitError."""
         error = ValidationError("validation error")
-        assert isinstance(error, AICommitsError)
+        assert isinstance(error, CommitError)
         assert isinstance(error, Exception)
 
     def test_validation_error_should_store_message(self):

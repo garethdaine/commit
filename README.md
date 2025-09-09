@@ -1,4 +1,4 @@
-# aicommits
+# commit
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -19,7 +19,7 @@ A modern Python CLI tool that generates meaningful git commit messages using AI.
 ## 📦 Installation
 
 ```bash
-pip install aicommits
+pip install commit
 ```
 
 ## 🛠️ Development Setup
